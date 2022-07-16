@@ -15,6 +15,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import la.bean.CategoryBean;
+import la.bean.ItemBean;
 
 class ItemDaoTest {
 	
@@ -30,6 +31,36 @@ class ItemDaoTest {
 	@AfterEach
 	void tearDown() throws Exception {
 	}
+	
+	@Nested
+	@DisplayName("ItemDAO#findByCategoryメソッドのテストクラス")
+	class FindByCategoryTest {
+		@Test
+		@DisplayName("本を選択すると「Javaの基本」「MLB Fun」「料理BOOK!」を取得できる")
+		void test_11() throws Exception {
+			// setup
+			int code = 1;
+			List<ItemBean> expectedList = new ArrayList<>();
+			ItemBean bean = null;
+			bean= new ItemBean(1, "Javaの基本", 2500);
+			expectedList.add(bean);
+			bean= new ItemBean(2, "MLB Fun", 980);
+			expectedList.add(bean);
+			bean= new ItemBean(3, "料理BOOK!", 1200);
+			expectedList.add(bean);
+			
+			// execute
+			List<ItemBean> actualList = sut.findByCategory(code);
+			
+			// verify
+			for (int i = 0; i < actualList.size(); i++) {
+				ItemBean actual = actualList.get(i);
+				ItemBean expected = expectedList.get(i);
+				assertThat(actual.toString(), is(expected.toString()));
+			}
+		}
+	}
+	
 	@Nested
 	@DisplayName("ItemDAO#findAllCategoryメソッドのテストクラス")
 	class FindAllCategoryTest {
