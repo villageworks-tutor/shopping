@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome shopping!</title>
+	<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<!-- ヘッダ表示領域 -->
+<header>
+	<nav id="menu">
+		<ol>
+			<li><a href="./top.html">ようこそ</a></li>
+			<li><a href="./list.html">本</a></li>
+			<li><a href="./list.html">DVD</a></li>
+			<li><a href="./list.html">ゲーム</a></li>
+			<li><a href="./cart.html">カートを見る</a></li>
+		</ol>
+	</nav>
+</header>
+
+<!-- メインコンテンツ表示領域 -->
+<main>
+	<article id="cart">
+		<h2>現在のカートの中身</h2>
+		<table border="1">
+			<tr>
+				<th>商品番号</th>
+				<th>商品名</th>
+				<th>単価（税込）</th>
+				<th>個数</th>
+				<th>小計</th>
+				<th>削除</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Javaの基本</td>
+				<td>2500円</td>
+				<td>2</td>
+				<td>5000円</td>
+				<td>
+					<form action="./cart.html" method="post">
+						<button type="submit" name="action" value="delete">削除</button>
+						<input type="hidden" name="code" value="1" />
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>The Racer</td>
+				<td>1000円</td>
+				<td>4</td>
+				<td>4000円</td>
+				<td>
+					<form action="./cart.html" method="post">
+						<button type="submit" name="action" value="delete">削除</button>
+						<input type="hidden" name="code" value="5" />
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>パズルゲーム</td>
+				<td>780円</td>
+				<td>3</td>
+				<td>2340円</td>
+				<td>
+					<form action="./cart.html" method="post">
+						<button type="submit" name="action" value="delete">削除</button>
+						<input type="hidden" name="code" value="7" />
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="6" class="right-align">総計：11340円</td>
+			</tr>
+			<tr>
+				<td colspan="6" class="button">
+					<form name="order">
+						<button formaction="./customerInfo.html" formmethod="post">注文する</button>
+					</form>
+				</td>
+			</tr>
+		</table>
+	</article>
+</main>
+
+<!-- フッタ表示領域 -->
+<!-- フッタ表示領域 -->
+<footer>
+	<div id="copyright">&copy; 2022 LA Saple Shopping Site.</div>
+</footer>
+
+</body>
+</html>

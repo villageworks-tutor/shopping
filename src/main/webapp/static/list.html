@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>商品一覧</title>
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<script src="../assets/js/function.js"></script>
+</head>
+<body>
+
+<!-- ヘッダ表示領域 -->
+<header>
+	<nav id="menu">
+		<ol>
+			<li><a href="./top.html">ようこそ</a></li>
+			<li><a href="./list.html">本</a></li>
+			<li><a href="./list.html">DVD</a></li>
+			<li><a href="./list.html">ゲーム</a></li>
+			<li><a href="./cart.html">カートを見る</a></li>
+		</ol>
+	</nav>
+</header>
+
+<!-- メインコンテンツ表示領域 -->
+<main>
+	<article id="list">
+		<h3>商品一覧</h3>
+		<form action="./cart.html" method="post">
+			<dl>
+				<dt>商品番号</dt><dd>1</dd>
+				<dt>商品名</dt><dd>Javaの基本</dd>
+				<dt>価格（税込）</dt><dd>2500円</dd>
+				<dt>個数</dt>
+				<dd>
+					<select name="quantity">
+						<script>
+							createOptions(5); // １から５までの選択肢を表示する例（引数がデフォルトの場合）
+						</script>
+					</select>個
+				</dd>
+			</dl>
+			<div>
+					<button type="submit" name="code" value="1">カートに追加</button>
+			</div>
+		</form>
+			
+		<form action="./cart.html" method="post">
+			<dl>
+				<dt>商品番号</dt><dd>2</dd>
+				<dt>商品名</dt><dd>MLB Fun</dd>
+				<dt>価格（税込）</dt><dd>980円</dd>
+				<dt>個数</dt>
+				<dd>
+					<select name="quantity">
+						<script>
+							createOptions(5, 2); // ２が選択された状態で１から５までの選択肢を表示する例（第2引数を指定した場合の例）
+						</script>
+					</select>個
+				</dd>
+			</dl>
+			<div>
+				<button type="submit" name="code" value="2">カートに追加</button>
+			</div>
+		</form>
+			
+		<form action="./cart.html" method="post">
+			<dl>
+				<dt>商品番号</dt><dd>3</dd>
+				<dt>商品名</dt><dd>料理BOOK!</dd>
+				<dt>価格（税込）</dt><dd>1200円</dd>
+				<dt>個数</dt>
+				<dd>
+					<select name="quantity">
+						<script>
+							createOptions(5, 4); // ４が選択された状態で１から５までの選択肢を表示する例（第2引数を指定した場合の例）
+						</script>
+					</select>個
+				</dd>
+			</dl>
+			<div>
+				<button type="submit" name="code" value="3">カートに追加</button>
+			</div>
+		</form>
+	</article>
+</main>
+
+<!-- フッタ表示領域 -->
+<footer>
+	<div id="copyright">&copy; 2022 LA Saple Shopping Site.</div>
+</footer>
+
+</body>
+</html>

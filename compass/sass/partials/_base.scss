@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+html {
+	font-size: 62.5%;
+	body {
+		color: dimgray;
+		font-size: $default-font-size;
+		width: calcSizeByScale(40);
+		margin: calcSizeByScale(0.75) calcSizeByScale(1.75);
+	}
+}
+
+/* メニューの表示スタイル */
+#menu {
+	padding: calcSizeByScale(0.5) 0;
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 0;
+		li {
+			display: inline;
+			margin: 0;
+			padding: 0 calcSizeByScale(0.5);
+			border-left: 1px solid dimgray;
+			&:first-child {
+				padding-left: 0;
+				border-width: 0;
+			}
+			font-size: $default-font-size;
+		}
+	}
+}
+
+#copyright {
+	margin: calcSizeByScale(1.25) 0;
+	font-family:'Times New Roman', Times, serif;
+	font-style: italic;
+}
