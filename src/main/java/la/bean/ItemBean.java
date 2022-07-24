@@ -105,7 +105,5 @@ public class ItemBean {
 		builder.append("quantity=" + quantity + "]");
 		return builder.toString();
 	}
-	
-	
 
 }

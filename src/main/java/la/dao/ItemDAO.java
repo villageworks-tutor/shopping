@@ -30,6 +30,7 @@ public class ItemDAO {
 	// SQL文字列定数群
 	private static final String SQL_FIND_ALL_CATEGORY = "SELECT * FROM category ORDER BY code";
 	private static final String SQL_FIND_BY_CATEGORY = "SELECT * FROM item WHERE category_code=? ORDER BY code";
+	private static final String SQL_FIND_BY_PRIMARYKEY = "SELECT * FROM item WHERE code=?";
 	
 	/**
 	 * クラスフィールド：データベース接続オブジェクト
@@ -101,5 +102,27 @@ public class ItemDAO {
 			throw new DAOException("レコードの取得に失敗しました");
 		}
 	}
+
+	public ItemBean findByPrimaryKey(int pKey) throws DAOException {
+		try (PreparedStatement pstmt = this.conn.prepareStatement(SQL_FIND_BY_PRIMARYKEY);) {
+			// プレースホルダに引数を設定（パラメータバインディング）
+			pstmt.setInt(1, pKey);
+			// SQLを実行
+			try (ResultSet rs = pstmt.executeQuery();) {
+				ItemBean bean = null;
+				if (rs.next()) {
+					bean = new ItemBean();
+					bean.setCode(rs.getInt("code"));
+					bean.setName(rs.getString("name"));
+					bean.setPrice(rs.getInt("price"));
+				}
+				return bean;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+	}
+
 
 }
