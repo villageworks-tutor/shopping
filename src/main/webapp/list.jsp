@@ -18,7 +18,7 @@
 	<article id="list">
 		<h3>商品一覧</h3>
 		<c:forEach items="${requestScope.items}" var="item">
-		<form action="./cart.html" method="post">
+		<form action="CartServlet" method="post">
 			<dl>
 				<dt>商品番号</dt><dd>${item.code}</dd>
 				<dt>商品名</dt><dd>${item.name}</dd>
@@ -33,7 +33,8 @@
 				</dd>
 			</dl>
 			<div>
-				<button type="submit" name="code" value="${item.code}">カートに追加</button>
+				<button type="submit" name="action" value="add">カートに追加</button>
+				<input type="hidden" name="code" value="${item.code}" />
 			</div>
 		</form>
 		</c:forEach>
