@@ -1,0 +1,62 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
+}
+html body {
+  color: dimgray;
+  font-size: 1.4rem;
+  width: 56rem;
+  margin: 1.05rem 2.45rem;
+}
+
+/* メニューの表示スタイル */
+#menu {
+  padding: 0.7rem 0;
+}
+#menu ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0;
+}
+#menu ol li {
+  display: inline;
+  margin: 0;
+  padding: 0 0.7rem;
+  border-left: 1px solid dimgray;
+  font-size: 1.4rem;
+}
+#menu ol li:first-child {
+  padding-left: 0;
+  border-width: 0;
+}
+
+#copyright {
+  margin: 1.75rem 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+}
+
+#list dl {
+  overflow: hidden;
+  width: 29.4rem;
+  margin: 1.75rem 0 0;
+}
+#list dl dt, #list dl dd {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+#list dl dt {
+  width: 8.4rem;
+}
+#list dl dd {
+  width: 21rem;
+  font-weight: bold;
+}
+#list form select {
+  margin: 0 0.7rem 0 0;
+}
+#list form button {
+  margin: 0.35rem 0;
+}
