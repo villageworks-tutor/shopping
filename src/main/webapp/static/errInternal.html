@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Input Error</title>
+	<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<!-- ヘッダ表示領域 -->
+<header>
+	<nav id="menu">
+		<ol>
+			<li><a href="./top.html">ようこそ</a></li>
+			<li><a href="./list.html">本</a></li>
+			<li><a href="./list.html">DVD</a></li>
+			<li><a href="./list.html">ゲーム</a></li>
+			<li><a href="./cart.html">カートを見る</a></li>
+		</ol>
+	</nav>
+</header>
+
+<!-- メインコンテンツ表示領域 -->
+<main>
+	<article id="error">
+		<section id="message">
+			<!-- セッションがない場合：セッションが切れていると判断 -->
+			<h3>セッションが切れています。もう一度トップページから操作して下さい。</h3>
+			<!-- カートがない場合、actionキーが不正な場合：不正な操作と判断 -->
+			<h3>正しい操作をして下さい。</h3>
+			<!-- DAO例外が発生した場合：内部エラー（想定外のエラー）と判断 -->
+			<h3>内部エラーが発生しました。</h3>
+		</section>
+	</article>
+</main>
+
+<!-- フッタ表示領域 -->
+<footer>
+	<div id="copyright">&copy; 2022 LA Saple Shopping Site.</div>
+</footer>
+
+</body>
+</html>
